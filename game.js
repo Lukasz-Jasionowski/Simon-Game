@@ -14,8 +14,7 @@ $('.btn').click(function () {
 
 function nextSequence() {
     userClickedPattern = [];
-    level++;
-    $("#level-title").text("Level " + level);
+    $("#level-title").text("Level " + ++level);
     let randomNumber = Math.floor(Math.random() * 4);
     let randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour);
@@ -25,8 +24,7 @@ function nextSequence() {
 }
 
 function playSound(name) {
-    let audio = new Audio("sounds/" + name + ".mp3");
-    audio.play();
+    new Audio("sounds/" + name + ".mp3").play();
 }
 
 function animatePress(currentColor) {
